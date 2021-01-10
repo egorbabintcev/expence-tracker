@@ -1,5 +1,5 @@
 ---
-to: "<%= generateSpec ? `${absPath}/${componentName}.spec.jsx` : null %>"
+to: "<%= generateSpec ? `${absPath}/${componentName}.spec.tsx` : null %>"
 ---
 
 import React from 'react';
