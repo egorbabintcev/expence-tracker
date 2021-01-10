@@ -1,5 +1,5 @@
 @import 'assets/sass/utils/mixins';
 
 :root {
-
+  @include defineColorRGB(--color-text-default, #333333);
 }

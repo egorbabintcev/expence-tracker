@@ -1,3 +1,0 @@
----
-to: <%= absPath %>/<%= componentName %>.css
----

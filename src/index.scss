@@ -1,0 +1,43 @@
+@import 'utils/colors';
+@import 'utils/typography';
+@import 'vendors/include-media';
+
+#alert {
+  z-index: 2;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Gilroy', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -moz-osx-font-smoothing: grayscale;
+
+  &::after, &::before {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 100%;
+
+  @include media('<=375px') {
+    font-size: 4.26vw;
+  }
+}
+
+body {
+  color: #2A323A;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  line-height: 1;
+}
