@@ -2,10 +2,6 @@
 @import 'utils/typography';
 @import 'vendors/include-media';
 
-#alert {
-  z-index: 2;
-}
-
 * {
   box-sizing: border-box;
   font-family: 'Gilroy', sans-serif;
@@ -27,7 +23,8 @@ html {
 }
 
 body {
-  color: #2A323A;
+  background-color: var(--color-background-default);
+  color: var(--color-text-default);
   margin: 0;
 }
 

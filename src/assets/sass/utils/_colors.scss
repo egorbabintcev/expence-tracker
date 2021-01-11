@@ -2,4 +2,7 @@
 
 :root {
   @include defineColorRGB(--color-text-default, #333333);
+  @include defineColorRGB(--color-panel-default, #ffffff);
+  @include defineColorRGB(--color-text-lighter, #555555);
+  @include defineColorRGB(--color-background-default, #cccccc);
 }

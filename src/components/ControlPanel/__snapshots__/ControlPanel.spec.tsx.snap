@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlPanel component Should match snapshot 1`] = `
+<div>
+  <div
+    class="control-panel is-active"
+  >
+    <ul
+      class="control-panel__list"
+    >
+      <li
+        class="control-panel__item"
+      >
+        <button
+          type="button"
+        >
+          <svg
+            class="control-panel__item-icon"
+          >
+            <use
+              xlink:href="icons.svg#create"
+            />
+          </svg>
+          <span
+            class="control-panel__item-text"
+          >
+            Добавить
+          </span>
+        </button>
+      </li>
+      <li
+        class="control-panel__item"
+      >
+        <button
+          type="button"
+        >
+          <svg
+            class="control-panel__item-icon"
+          >
+            <use
+              xlink:href="icons.svg#delete"
+            />
+          </svg>
+          <span
+            class="control-panel__item-text"
+          >
+            Удалить
+          </span>
+        </button>
+      </li>
+      <li
+        class="control-panel__item"
+      >
+        <button
+          type="button"
+        >
+          <svg
+            class="control-panel__item-icon"
+          >
+            <use
+              xlink:href="icons.svg#settings"
+            />
+          </svg>
+          <span
+            class="control-panel__item-text"
+          >
+            Настройки
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -1,0 +1,63 @@
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+
+.control-panel {
+  background-color: var(--color-panel-default);
+  bottom: 0;
+  left: 0;
+  padding: rem(8);
+  position: fixed;
+  transition: transform 0.2s;
+  transition-delay: 0.2s;
+  width: 100%;
+
+  &:not(.is-active) {
+    transform: translateY(100%);
+  }
+
+  &.is-active {
+    transform: translateY(0);
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: rem(20);
+    }
+
+    button {
+      align-items: center;
+      background: none;
+      border: 0;
+      display: flex;
+      flex-direction: column;
+      outline: none;
+      padding: 0;
+    }
+
+    &-icon {
+      fill: #c4c4c4;
+      height: rem(25);
+      margin-bottom: rem(7);
+      width: rem(25);
+    }
+
+    &-text {
+      color: var(--color-text-lighter);
+      line-height: rem(14);
+      font: {
+        size: rem(14);
+        weight: 500;
+      }
+    }
+  }
+}

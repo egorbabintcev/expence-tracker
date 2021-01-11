@@ -7,3 +7,9 @@
   #{$color}-g: unquote("#{$green}");
   #{$color}-b: unquote("#{$blue}");
 }
+
+@mixin pseudo($content: '') {
+  content: $content;
+  display: block;
+  position: absolute;
+}
