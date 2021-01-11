@@ -1,15 +1,15 @@
 ---
 to: <%= absPath %>/<%= componentName %>.tsx
 ---
-import React from 'react';
-import './<%= componentName %>.scss';
+import React from 'react'
+import './<%= componentName %>.scss'
 
 interface <%= componentName %>Props {
 
 }
 
 const <%= componentName %>:React.FC<<%= componentName %>Props> = (props) => {
-  return ();
-};
+  return ()
+}
 
-export default <%= componentName %>;
+export default <%= componentName %>
