@@ -1,9 +1,13 @@
 import React from 'react'
-import { IExpense, Category } from 'core'
+import { Category } from 'core'
 import './ExpenceItem.scss'
 import icons from './icons.svg'
 
-interface ExpenceItemProps extends IExpense {}
+interface ExpenceItemProps {
+  name: string,
+  amount: number,
+  category: Category
+}
 
 const ExpenceItem: React.FC<ExpenceItemProps> = ({
   name,

@@ -7,11 +7,14 @@ const getEarlierDate = (dayBefore = 0): Date => {
   return date
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Add <any> generic to access key by value
 export enum Category {
   food = <any>'Еда',
   clothes = <any>'Одежда',
   transport = <any>'Транспорт',
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export interface IExpense {
   id: v4
