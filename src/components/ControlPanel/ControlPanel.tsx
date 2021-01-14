@@ -9,7 +9,7 @@ interface ControlPanelProps {
 }
 */
 
-const ControlPanel:React.FC = () => {
+const ControlPanel: React.FC = () => {
   const [isActive, setIsActive] = useState(true)
 
   let prevScroll = window.scrollY
