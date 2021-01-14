@@ -5,4 +5,6 @@
   @include defineColorRGB(--color-panel-default, #ffffff);
   @include defineColorRGB(--color-text-lighter, #555555);
   @include defineColorRGB(--color-background-default, #cccccc);
+  @include defineColorRGB(--color-background-green, #6cc294);
+  @include defineColorRGB(--color-text-darker-grey, #888888);
 }

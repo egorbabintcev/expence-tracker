@@ -3,5 +3,7 @@ import { render, screen } from '@testing-library/react';
 import App from './';
 
 describe('App component', () => {
-  test('', () => {});
+  test('Should render', () => {
+    render(<App />)
+  });
 });
