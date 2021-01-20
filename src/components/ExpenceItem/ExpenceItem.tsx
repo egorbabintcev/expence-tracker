@@ -1,11 +1,11 @@
 import React from 'react'
-import { Category } from 'core'
+import { Category } from 'core/stores/expences.store'
 import './ExpenceItem.scss'
 import icons from './icons.svg'
 
 interface ExpenceItemProps {
-  name: string,
-  amount: number,
+  name: string
+  amount: number
   category: Category
 }
 

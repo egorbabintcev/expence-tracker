@@ -28,7 +28,7 @@ type SortedExpenceType = {
   [property: string]: Array<IExpense>
 }
 
-export default class Store {
+class ExpencesStore {
   @observable expences: Array<IExpense> = [
     {
       id: v4(),
@@ -121,3 +121,7 @@ export default class Store {
     this.expences = this.expences.filter((e) => e.id !== id)
   }
 }
+
+const expencesStore = new ExpencesStore()
+
+export default expencesStore

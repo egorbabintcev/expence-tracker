@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import { v4 } from 'uuid'
-import { IExpense } from 'core'
+import { IExpense } from 'core/stores/expences.store'
 import ExpenceItem from 'components/ExpenceItem'
 import 'moment/locale/ru'
 import './ExpenceDay.scss'
