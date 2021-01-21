@@ -1,20 +1,12 @@
 import { action, computed, makeObservable, observable } from 'mobx'
 import { v4 } from 'uuid'
 
-const getEarlierDate = (dayBefore = 0): Date => {
-  const date = new Date()
-  date.setDate(date.getDate() - dayBefore)
-  return date
-}
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// Add <any> generic to access key by value
 export enum Category {
-  food = <any>'Еда',
-  clothes = <any>'Одежда',
-  transport = <any>'Транспорт',
+  food = 'Еда',
+  clothes = 'Одежда',
+  transport = 'Транспорт',
+  other = 'Другое',
 }
-/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export interface IExpense {
   id: v4
@@ -29,71 +21,7 @@ type SortedExpenceType = {
 }
 
 class ExpencesStore {
-  @observable expences: Array<IExpense> = [
-    {
-      id: v4(),
-      createdAt: new Date(),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.food,
-    },
-    {
-      id: v4(),
-      createdAt: new Date(),
-      amount: 115,
-      name: 'Поездка на такси до церкви',
-      category: Category.transport,
-    },
-    {
-      id: v4(),
-      createdAt: new Date(),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.food,
-    },
-    {
-      id: v4(),
-      createdAt: new Date(),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.food,
-    },
-    {
-      id: v4(),
-      createdAt: getEarlierDate(1),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.clothes,
-    },
-    {
-      id: v4(),
-      createdAt: getEarlierDate(1),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.clothes,
-    },
-    {
-      id: v4(),
-      createdAt: getEarlierDate(2),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.clothes,
-    },
-    {
-      id: v4(),
-      createdAt: getEarlierDate(2),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.clothes,
-    },
-    {
-      id: v4(),
-      createdAt: getEarlierDate(2),
-      amount: 256,
-      name: 'Завтрак в Глобусе',
-      category: Category.clothes,
-    },
-  ]
+  @observable expences: Array<IExpense> = []
 
   constructor() {
     makeObservable(this)
