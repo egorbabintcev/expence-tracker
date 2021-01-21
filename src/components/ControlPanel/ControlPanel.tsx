@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
+import { modalStore } from 'core/stores'
 import './ControlPanel.scss'
 import icons from './icons.svg'
 
@@ -11,6 +12,7 @@ interface ControlPanelProps {
 
 const ControlPanel: React.FC = () => {
   const [isActive, setIsActive] = useState(true)
+  const { openModal } = modalStore
 
   let prevScroll = window.scrollY
   const handleScroll: EventListener = (e: Event) => {
@@ -43,7 +45,7 @@ const ControlPanel: React.FC = () => {
     <div className={cx('control-panel', { 'is-active': isActive })}>
       <ul className="control-panel__list">
         <li className="control-panel__item">
-          <button type="button">
+          <button type="button" onClick={openModal.bind(null, 'editor')}>
             <svg className="control-panel__item-icon">
               <use xlinkHref={`${icons}#create`} />
             </svg>

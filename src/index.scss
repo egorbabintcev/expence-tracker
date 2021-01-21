@@ -1,6 +1,7 @@
 @import 'utils/colors';
 @import 'utils/typography';
 @import 'vendors/include-media';
+@import 'components/modal';
 
 * {
   box-sizing: border-box;
@@ -9,7 +10,8 @@
   -webkit-tap-highlight-color: transparent;
   -moz-osx-font-smoothing: grayscale;
 
-  &::after, &::before {
+  &::after,
+  &::before {
     box-sizing: border-box;
   }
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { v4 } from 'uuid'
-import { observer } from 'mobx-react'
 import { expencesStore } from 'core/stores'
 import ExpenceDay from 'components/ExpenceDay'
 import './Dashboard.scss'
@@ -23,4 +22,4 @@ const Dashboard: React.FC = () => {
   )
 }
 
-export default observer(Dashboard)
+export default Dashboard
