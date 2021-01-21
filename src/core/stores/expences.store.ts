@@ -13,7 +13,7 @@ export interface IExpense {
   createdAt: Date
   amount: number
   name: string
-  category: Category
+  category: keyof typeof Category
 }
 
 type SortedExpenceType = {
@@ -29,7 +29,7 @@ class ExpencesStore {
 
   @computed
   get sortedExpences(): SortedExpenceType {
-    return this.expences.reduce((acc, el) => {
+    return this.expences.reverse().reduceRight((acc, el) => {
       const key = el.createdAt.toDateString()
       if (!acc[key]) {
         acc[key] = []
