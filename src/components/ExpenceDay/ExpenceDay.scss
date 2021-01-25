@@ -6,7 +6,7 @@
   margin-bottom: rem(20);
   padding: rem(20) rem(15) rem(30);
 
-  &:last-of-type {
+  &:not(:only-of-type):last-of-type {
     border-radius: 0;
     margin-bottom: 0;
   }
