@@ -21,7 +21,9 @@ type SortedExpenceType = {
 }
 
 class ExpencesStore {
-  @observable expences: Array<IExpense> = []
+  @observable expences: Array<IExpense> = JSON.parse(
+    localStorage.getItem('expences') || '[]',
+  ) as Array<IExpense>
 
   constructor() {
     makeObservable(this)
@@ -30,7 +32,7 @@ class ExpencesStore {
   @computed
   get sortedExpences(): SortedExpenceType {
     return this.expences.reverse().reduceRight((acc, el) => {
-      const key = el.createdAt.toDateString()
+      const key = new Date(el.createdAt).toDateString()
       if (!acc[key]) {
         acc[key] = []
       }
@@ -42,11 +44,13 @@ class ExpencesStore {
   @action
   addExpence = (expence: IExpense): void => {
     this.expences.push(expence)
+    localStorage.setItem('expences', JSON.stringify(this.expences))
   }
 
   @action
   removeExpence = (id: v4): void => {
     this.expences = this.expences.filter((e) => e.id !== id)
+    localStorage.setItem('expences', JSON.stringify(this.expences))
   }
 }
 
