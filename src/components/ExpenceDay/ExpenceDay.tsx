@@ -17,12 +17,10 @@ const ExpenceDay: React.FC<ExpenceDayProps> = ({ date, expences }) => {
   return (
     <div className="expence-day">
       <p className="expence-day__date">{formatDate}</p>
-      {expences.map(({ name, amount, category }) => (
+      {expences.map((e) => (
         <ExpenceItem
           key={v4()}
-          name={name}
-          amount={amount}
-          category={category}
+          expence={e}
         />
       ))}
     </div>

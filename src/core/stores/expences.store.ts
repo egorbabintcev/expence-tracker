@@ -25,13 +25,15 @@ class ExpencesStore {
     localStorage.getItem('expences') || '[]',
   ) as Array<IExpense>
 
+  @observable deletionList: Array<IExpense> = []
+
   constructor() {
     makeObservable(this)
   }
 
   @computed
   get sortedExpences(): SortedExpenceType {
-    return this.expences.reverse().reduceRight((acc, el) => {
+    return [...this.expences].reduceRight((acc, el) => {
       const key = new Date(el.createdAt).toDateString()
       if (!acc[key]) {
         acc[key] = []
@@ -50,6 +52,35 @@ class ExpencesStore {
   @action
   removeExpence = (id: v4): void => {
     this.expences = this.expences.filter((e) => e.id !== id)
+    this.deletionList = this.deletionList.filter((e) => e.id !== id)
+    localStorage.setItem('expences', JSON.stringify(this.expences))
+  }
+
+  @action
+  selectExpence = (expence: IExpense): void => {
+    const temp = [...this.deletionList]
+    const expenceIdx = temp.indexOf(expence)
+    if (expenceIdx !== -1) {
+      temp.splice(expenceIdx, 1)
+    } else {
+      temp.push(expence)
+    }
+    this.deletionList = temp
+  }
+
+  @action
+  selectAllExpences = (): void => {
+    if (this.deletionList.length === this.expences.length) {
+      this.deletionList = []
+    } else {
+      this.deletionList = [...this.expences]
+    }
+  }
+
+  @action
+  removeSelectedExpences = (): void => {
+    this.expences = this.expences.filter((e) => !this.deletionList.includes(e))
+    this.deletionList = []
     localStorage.setItem('expences', JSON.stringify(this.expences))
   }
 }

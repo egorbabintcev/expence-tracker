@@ -9,6 +9,11 @@
     margin-bottom: 0;
   }
 
+  &.delete-mode {
+    cursor: pointer;
+    user-select: none;
+  }
+
   &__icon {
     background-color: var(--color-background-green);
     border-radius: 50%;
@@ -49,6 +54,45 @@
     font: {
       size: rem(20);
       weight: 700;
+    }
+  }
+
+  &__checkbox {
+    align-self: center;
+    margin: {
+      left: auto;
+      right: rem(20);
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked + &-wrapper {
+      background-color: var(--color-background-green);
+      border-color: var(--color-background-green);
+
+      svg {
+        opacity: 1;
+      }
+    }
+
+    &-wrapper {
+      align-items: center;
+      border: rem(1) solid var(--color-background-default);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      padding: rem(5);
+      transition: 0.2s;
+
+      svg {
+        fill: var(--color-text-white);
+        height: rem(12);
+        opacity: 0;
+        transition: 0.2s;
+        width: rem(12);
+      }
     }
   }
 }
